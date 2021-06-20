@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add a song to {{ playlist.name }}</h1>
+
+
+<form method="POST">
+    {% for song in songs %}
+    <input type="checkbox" value="{{song.id}}" id="song_{{song.id}}" name="songs">
+    <label for="song_{{song.id}}">{{song.title}} by {{song.artist}}</label>
+    <br>
+    {% endfor %}
+  
+    <button class="btn btn-success" type="submit">Add songs to playlist</button>
+  
+  </form>
+
+{% endblock %}
